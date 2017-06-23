@@ -1,0 +1,20 @@
+body {
+  font-size: 16px;
+  
+  background-color: rgb(38,38,38);
+  font-family: 'Oxygen', sans-serif;
+  margin: 0 auto;
+}
+
+.container{
+	background-color:rgb(42,42,42);
+	height:800px;
+}
+
+.row{
+	text-align:center;
+}
+
+.btn-test{
+	text-align: center;
+}
