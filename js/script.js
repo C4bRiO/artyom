@@ -23,6 +23,7 @@ $(document).ready(function(){
 	});   		
 
     $('#btn_finalizar').click(function(){
-   		alert('Escucha finalizada');
+   		console.log('Escucha finalizada');
+   		artyom.fatality();
     });
 });
