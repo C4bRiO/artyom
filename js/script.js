@@ -1,28 +1,28 @@
 $(document).ready(function(){
 
+	function startContinuousArtyom(){
+	    artyom.fatality();// use this to stop any of
+
+	    setTimeout(function(){// if you use artyom.fatality , wait 250 ms to initialize again.
+	         artyom.initialize({
+	            lang:"en-GB",// A lot of languages are supported. Read the docs !
+	            continuous:true,// Artyom will listen forever
+	            listen:true, // Start recognizing
+	            debug:true, // Show everything in the console
+	            speed:1 // talk normally
+	        }).then(function(){
+	            console.log("Ready to work !");
+	        });
+	    },250);
+	}	  		
+
    $('#btn_iniciar').click(function(){
-   		//alert('Escucha iniciada');
-   		
-   		function startContinuousArtyom(){
-    	artyom.fatality();// Detener cualquier instancia previa
+   		console.log('Escucha iniciada');
+		startContinuousArtyom();
+		console.log('Hable ahora');	
+	});   		
 
-    	setTimeout(function(){// Esperar 250ms para inicializar
-        	artyom.initialize({
-        		lang:"en-GB",// Más lenguajes son soportados, lee la documentación
-		        continuous:true,// Artyom obedecera por siempre
-		        listen:true, // Iniciar !
-		        debug:true, // Muestra un informe en la consola
-		        speed:1 // Habla normalmente
-		    }).then(function(){
-        	
-        	console.log("Ready to work !");
-       	 	});
-    	},250);
-}
-    });
-   });
-
-      $('#btn_finalizar').click(function(){
+    $('#btn_finalizar').click(function(){
    		alert('Escucha finalizada');
-   });
+    });
 });
