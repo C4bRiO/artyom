@@ -40,6 +40,15 @@
                 artyom.say(wildcard);
             }
         }
+        {
+            indexes: ['escribe *'],
+            smart:true,
+            action : function(i,wildcard,recognized_text){
+                console.log("Recognized : " + recognized_text,"Wildcard : "+wildcard);
+                //artyom.say(wildcard);
+                document.getElementById("texto").innerHTML = wildcard;
+            }
+        }        
         //Continue adding your own commands here
     ];
 
@@ -51,7 +60,7 @@
 
     artyom.on(['Good morning']).then(function(i){
         alert("Good morning ! How are you?");
-    });
+    });    
 
     artyom.on(['Repeat after me *'] , true).then(function(i, wildcard){
         alert("You've said " + wildcard);
