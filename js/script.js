@@ -14,7 +14,15 @@ $(document).ready(function(){
 	            console.log("Ready to work !");
 	        });
 	    },250);
-	}	  		
+	}	
+
+	/*LISTA DE TAREAS
+		1. Check if connection is http or https for applying the right function
+		2. Show a message when the mic is listening, and when it stops.
+		3. write on the div, the word that artyom has just listened.
+		4. write on a database directly from js.
+	*/
+
 
    $('#btn_iniciar').click(function(){
    		console.log('Escucha iniciada');

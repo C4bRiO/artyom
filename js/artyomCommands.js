@@ -21,7 +21,7 @@
         {
             indexes: ['hello'],
             action : function(i){
-                artyom.say("Hello, how are you? My name is Artyom.",{
+                artyom.say("Hola, Araceli",{
                     onStart: function(){
                         console.log("Speaking presentation");
                     },
