@@ -46,7 +46,8 @@
             action : function(i,wildcard,recognized_text){
                 console.log("Recognized : " + recognized_text,"Wildcard : "+wildcard);
                 //artyom.say(wildcard);
-                document.getElementById("texto").innerHTML = wildcard;
+                //document.getElementById("texto").innerHTML = wildcard;
+                console.log('Palabra reconocida: '+wildcard);
             }
         }        
         //Continue adding your own commands here
