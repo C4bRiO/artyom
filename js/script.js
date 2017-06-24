@@ -5,7 +5,7 @@ $(document).ready(function(){
 
 	    setTimeout(function(){// if you use artyom.fatality , wait 250 ms to initialize again.
 	         artyom.initialize({
-	            lang:"en-GB",// A lot of languages are supported. Read the docs !
+	            lang:"es-ES",// A lot of languages are supported. Read the docs !
 	            continuous:true,// Artyom will listen forever
 	            listen:true, // Start recognizing
 	            debug:true, // Show everything in the console
