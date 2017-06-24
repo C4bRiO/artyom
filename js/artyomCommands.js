@@ -19,9 +19,9 @@
     var artyomCommands = [
         //Simple Command Example
         {
-            indexes: ['hello'],
+            indexes: ['hola'],
             action : function(i){
-                artyom.say("Hola, Araceli",{
+                artyom.say("Hola, Jazmín.",{
                     onStart: function(){
                         console.log("Speaking presentation");
                     },
@@ -33,7 +33,7 @@
         },
         //Smart Command Example
         {
-            indexes: ['pronunciate * please'],
+            indexes: ['pronuncia * por favor'],
             smart:true,
             action : function(i,wildcard,recognized_text){
                 console.log("Recognized : " + recognized_text,"Wildcard : "+wildcard);
