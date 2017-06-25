@@ -19,16 +19,16 @@
     var artyomCommands = [
         //Simple Command Example
         {
-            indexes: ['hola'],
+            indexes: ['Buen día'],
             action : function(i){
-                artyom.say("Hola, Jazmín.",{
+                artyom.say("Buen día, Felicidades, Jazmín y Ever por su cumple mes 2.3.",{
                     onStart: function(){
                         console.log("Speaking presentation");
                     },
                     onEnd: function(){
                         console.log("All that i've to say has been said.");
                     }
-                });
+                });                
             }
         },
         //Smart Command Example
