@@ -19,9 +19,9 @@
     var artyomCommands = [
         //Simple Command Example
         {
-            indexes: ['hola'],
+            indexes: ['Buen día'],
             action : function(i){
-                artyom.say("Hola, Jazmín.",{
+                artyom.say("Buen día, Felicidades, Jazmín y Ever por su cumple mes 2.3.",{
                     onStart: function(){
                         console.log("Speaking presentation");
                     },
@@ -63,10 +63,10 @@
         alert("Good morning ! How are you?");
     });
 
-    artyom.on(['Buen día']).then(function(i){
+    /*artyom.on(['Buen día']).then(function(i){
         //alert("Good morning ! How are you?");
         artyom.say('Buen día, felicidades, Jazmín y Ever por su cumple mes 2.3');
-    });
+    });*/
 
     artyom.on(['Repeat after me *'] , true).then(function(i, wildcard){
         alert("You've said " + wildcard);
