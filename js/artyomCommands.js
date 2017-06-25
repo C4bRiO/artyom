@@ -61,7 +61,12 @@
 
     artyom.on(['Good morning']).then(function(i){
         alert("Good morning ! How are you?");
-    });    
+    });
+
+    artyom.on(['Buen día']).then(function(i){
+        //alert("Good morning ! How are you?");
+        artyom.say('Buen día, felicidades, Jazmín y Ever por su cumple mes 2.3');
+    });
 
     artyom.on(['Repeat after me *'] , true).then(function(i, wildcard){
         alert("You've said " + wildcard);
