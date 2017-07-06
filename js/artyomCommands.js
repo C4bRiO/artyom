@@ -21,7 +21,7 @@
         {
             indexes: ['Buen día'],
             action : function(i){
-                artyom.say("Buen día, Felicidades, Jazmín y Ever por su cumple mes 2.3.",{
+              artyom.say("Buen día, señor, en que puedo ayudarle.",{
                     onStart: function(){
                         console.log("Speaking presentation");
                     },
