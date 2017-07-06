@@ -28,7 +28,7 @@
                     onEnd: function(){
                         console.log("All that i've to say has been said.");
                     }
-                });                
+                });
             }
         },
         //Smart Command Example
@@ -41,7 +41,7 @@
             }
         },
         {
-            indexes: ['Hola Artyom, me llamo *'],
+            indexes: ['Hola Eva, me llamo *'],
             smart:true,
             action : function(i,wildcard,recognized_text){
                 console.log("Recognized : " + recognized_text,"Wildcard : "+wildcard);
