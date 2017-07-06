@@ -41,11 +41,11 @@
             }
         },
         {
-            indexes: ['Hola Eva, me llamo *'],
+            indexes: ['Hola Jose, me llamo *'],
             smart:true,
             action : function(i,wildcard,recognized_text){
                 console.log("Recognized : " + recognized_text,"Wildcard : "+wildcard);
-                artyom.say("Bienvenido "+ wildcard);
+                artyom.say("Mi nombre no es Jose, es Artyom, pero Bienvenido "+ wildcard);
                 //document.getElementById("texto").innerHTML = wildcard;
                 console.log('Palabra reconocida: '+wildcard);
             }
