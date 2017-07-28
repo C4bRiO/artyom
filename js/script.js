@@ -33,5 +33,6 @@ $(document).ready(function(){
     $('#btn_finalizar').click(function(){
    		console.log('Escucha finalizada');
    		artyom.fatality();
+   		 $("#test3").val("");
     });
 });

@@ -3,6 +3,7 @@ body {
   
   background-color: rgb(38,38,38);
   font-family: 'Oxygen', sans-serif;
+  text-align:center;
   margin: 0 auto;
 }
 
@@ -15,6 +16,6 @@ body {
 	text-align:center;
 }
 
-{
-	margin:0 auto;
+h2{
+	color:white;
 }

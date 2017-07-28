@@ -16,38 +16,70 @@
      * Example Artyom Commands
      * @type Array
      */
-    var artyomCommands = [
-        //Simple Command Example
+    var calculadora = [
+        //SUMAS RESTAS PRODUCTOS Y COCIENTES
         {
-            indexes: ['Buen día'],
-            action : function(i){
-              artyom.say("Buen día, señor, en que puedo ayudarle.",{
-                    onStart: function(){
-                        console.log("Speaking presentation");
-                    },
-                    onEnd: function(){
-                        console.log("All that i've to say has been said.");
-                    }
-                });
-            }
-        },
-        //Smart Command Example
-        {
-            indexes: ['pronuncia * por favor'],
+            indexes: ['sumar * por favor'],
             smart:true,
             action : function(i,wildcard,recognized_text){
                 console.log("Recognized : " + recognized_text,"Wildcard : "+wildcard);
-                artyom.say(wildcard);
+                var bandera = 0;
+                var inicial = wildcard.trim();
+                var pos_mas = inicial.indexOf("mas");
+                if(pos_mas < 0 ){
+                  pos_mas = inicial.indexOf('más');
+                }
+                var p_valor = inicial.substr(0, pos_mas - 1);
+                if(p_valor.trim() == 'cinco'){
+                  p_valor = 5;
+                  bandera = 1;
+                }
+                var s_valor = inicial.substr(pos_mas+3,inicial.length);
+                if(s_valor.trim() == 'cinco'){
+                  s_valor = 5;
+                  bandera = 1;
+                }
+
+                //var res = parseInt(p_valor.trim()) +parseInt(s_valor.trim());
+                if(bandera == 1){
+                  var res = parseInt(p_valor) + parseInt(s_valor);
+                }else{
+                  var res = parseInt(p_valor.trim()) +parseInt(s_valor.trim());
+                }
+
+                $("#test3").val(p_valor +" mas "+s_valor+" = "+res);
+                
+                /* PARA DEBUG */
+                  //$("#test4").val("P_VALOR: "+p_valor);
+                  //$("#test5").val("S_VALOR: "+s_valor);
+                  //$("#test6").val("* INICIAL: "+inicial);
+                /*fin de area de DEBUG*/
+
+
+                artyom.say('El resultado es '+res);
+                
+                console.log('Palabra reconocida: '+wildcard);
             }
         },
         {
-            indexes: ['Hola Jose me llamo *'],
+            indexes: ['restar * por favor'],
             smart:true,
             action : function(i,wildcard,recognized_text){
                 console.log("Recognized : " + recognized_text,"Wildcard : "+wildcard);
-                artyom.say("Mi nombre no es Jose, es Artyom, pero Bienvenido "+ wildcard);
-                $("#test3").val(wildcard);
-                //document.getElementById("texto").innerHTML = wildcard;
+                
+                var inicial = wildcard.trim();
+                var pos_menos = inicial.indexOf("menos");
+                if(pos_menos < 0 ){
+                  pos_menos = inicial.indexOf('-');
+                  var s_valor = wildcard.substr(pos_menos+1,inicial.length);
+                }
+                var p_valor = inicial.substr(0, pos_menos - 1);
+                var s_valor = wildcard.substr(pos_menos+5,inicial.length);
+                
+                var res = parseInt(p_valor.trim()) - parseInt(s_valor.trim());
+                $("#test3").val(p_valor +" menos "+s_valor+" = "+res);
+                artyom.say('El resultado es '+res);
+                
                 console.log('Palabra reconocida: '+wildcard);
             }
         },
@@ -61,12 +93,11 @@
                 var pos_por = inicial.indexOf("por");
                 var p_valor = inicial.substr(0, pos_por - 1);
                 var s_valor = wildcard.substr(pos_por+3,inicial.length);
-                //var p_valor = wildcard.substr(0, 1);
-                //var s_valor = wildcard.substr(6,1);
+                
                 var res = p_valor*s_valor;
                 $("#test3").val(p_valor +" por "+s_valor+" = "+res);
                 artyom.say('El resultado es '+res);
-                //document.getElementById("texto").innerHTML = wildcard;
+                
                 console.log('Palabra reconocida: '+wildcard);
             }
         },
@@ -96,19 +127,6 @@
         //Continue adding your own commands here
     ];
 
-    artyom.addCommands(artyomCommands);
-
-    /**
-     * Or use the shorter and cleaner method :
-     */
-
-    artyom.on(['Good morning']).then(function(i){
-        alert("Good morning ! How are you?");
-    });    
-
-    artyom.on(['Repeat after me *'] , true).then(function(i, wildcard){
-        alert("You've said " + wildcard);
-    });
-
+    artyom.addCommands(calculadora);
     console.log(artyom.getAvailableCommands());
 })(window);
