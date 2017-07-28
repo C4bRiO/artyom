@@ -48,13 +48,13 @@
                 }
 
                 $("#test3").val(p_valor +" mas "+s_valor+" = "+res);
-                
+                $("#consola").val(recognized_text);
                 /* PARA DEBUG */
                   //$("#test4").val("P_VALOR: "+p_valor);
                   //$("#test5").val("S_VALOR: "+s_valor);
                   //$("#test6").val("* INICIAL: "+inicial);
                 /*fin de area de DEBUG*/
-
+                
 
                 artyom.say('El resultado es '+res);
                 
